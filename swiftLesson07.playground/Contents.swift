@@ -54,5 +54,5 @@ for i in 0..<monthsDays.count {
         daysAll+=monthsDays[i]
     }
 }
-daysAll
+print(daysAll)
 
