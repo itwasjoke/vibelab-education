@@ -41,11 +41,6 @@ class ViewController: UIViewController,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NumberCell", for: indexPath) as! NumberCell
         cell.imageView.image = images[indexPath.row]
-//        if indexPath.row < images.count - 1 {
-//                    cell.imageView.image = UIImage(named: images[indexPath.row])
-//                } else if selectedImage != nil {
-//                    cell.imageView.image = selectedImage
-//                }
         return cell
     }
     
@@ -53,25 +48,44 @@ class ViewController: UIViewController,
         let layout = UICollectionViewFlowLayout()
         let screenWidth = UIScreen.main.bounds.width
 
-            // Вычисляем ширину ячейки
         let cellWidth = (screenWidth - layout.minimumInteritemSpacing * 2) / 3
 
-            // Настраиваем layout
         layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
-        layout.minimumInteritemSpacing = 0 // Измените значение по необходимости
-        layout.minimumLineSpacing = 0    // Измените значение по необходимости
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10) // Измените значение по необходимости
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         return layout
     }
     
     
     
     @IBAction func addPhoto(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            present(imagePicker, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Выберите источник", message: nil, preferredStyle: .actionSheet)
+                
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Камера", style: .default) { _ in
+                self.showImagePicker(sourceType: .camera)
+            }
+            alert.addAction(cameraAction)
+        }
+
+        let libraryAction = UIAlertAction(title: "Галерея", style: .default) { _ in
+            self.showImagePicker(sourceType: .photoLibrary)
+        }
+        alert.addAction(libraryAction)
+
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+
+        present(alert, animated: true, completion: nil)
     }
+    
+    func showImagePicker(sourceType: UIImagePickerController.SourceType) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = sourceType
+            present(imagePicker, animated: true, completion: nil)
+        }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
