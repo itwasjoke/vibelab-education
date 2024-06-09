@@ -146,8 +146,7 @@ class AddNewViewController: UIViewController {
         let c4 = check(feild: phoneFld)
         let c5 = check(feild: workFld)
         let c6 = check(feild: emailFld)
-        if c1 && c2 && c3 && c4 && c4 && c5 && c6
-            {
+        if c1 && c2 && c3 && c4 && c4 && c5 && c6 {
             let genderSelected = genderPicker.selectedRow(inComponent: 0)
             var gender : Gender
             if genderSelected == 1 {
