@@ -6,14 +6,19 @@
 //
 
 import UIKit
+protocol ViewControllerDeligate: AnyObject {
+    func deletePost(id: Int)
+}
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ViewControllerDeligate {
     
     let networkManager = NetworkManager()
     var dataSource = [EmailedArticle]()
+    
     @IBOutlet weak var table: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
         table.dataSource = self
@@ -31,8 +36,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             
         }
-        
-//        getDataRequest()
     }
 
     
@@ -55,11 +58,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if segue.identifier == "showInfo" {
             let post = sender as? EmailedArticle
             let destController = segue.destination as! DetailControllerView
+            destController.deligate = self
             destController.post = post
         }
+    }
+    
+    func deletePost(id: Int) {
+        print(id)
+        dataSource = dataSource.filter {$0.id != id}
+        table.reloadData()
     }
 
 
 }
 
-//        guard let url2 = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }

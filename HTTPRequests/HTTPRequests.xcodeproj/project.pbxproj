@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D638F17E2C28641400CA1900 /* DetailControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638F17D2C28641400CA1900 /* DetailControllerView.swift */; };
 		D638F1802C2867A500CA1900 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638F17F2C2867A500CA1900 /* NetworkManager.swift */; };
+		D64096682C28803800E0280A /* LikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64096672C28803800E0280A /* LikedViewController.swift */; };
+		D640966B2C2881F000E0280A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D64096692C2881EF00E0280A /* Model.xcdatamodeld */; };
 		D65F4B092C26DD32009360DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65F4B082C26DD32009360DD /* AppDelegate.swift */; };
 		D65F4B0B2C26DD32009360DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65F4B0A2C26DD32009360DD /* SceneDelegate.swift */; };
 		D65F4B0D2C26DD32009360DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65F4B0C2C26DD32009360DD /* ViewController.swift */; };
@@ -16,11 +18,15 @@
 		D65F4B122C26DD33009360DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65F4B112C26DD33009360DD /* Assets.xcassets */; };
 		D65F4B152C26DD33009360DD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D65F4B142C26DD33009360DD /* Base */; };
 		D65F4B1D2C26E094009360DD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65F4B1C2C26E094009360DD /* Post.swift */; };
+		D6E528B82C288B8000F01AC8 /* PostDB2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E528B62C288B8000F01AC8 /* PostDB2+CoreDataClass.swift */; };
+		D6E528B92C288B8000F01AC8 /* PostDB2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E528B72C288B8000F01AC8 /* PostDB2+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D638F17D2C28641400CA1900 /* DetailControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailControllerView.swift; sourceTree = "<group>"; };
 		D638F17F2C2867A500CA1900 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D64096672C28803800E0280A /* LikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewController.swift; sourceTree = "<group>"; };
+		D640966A2C2881EF00E0280A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D65F4B052C26DD32009360DD /* HTTPRequests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTTPRequests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65F4B082C26DD32009360DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D65F4B0A2C26DD32009360DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +36,8 @@
 		D65F4B142C26DD33009360DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D65F4B162C26DD33009360DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D65F4B1C2C26E094009360DD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D6E528B62C288B8000F01AC8 /* PostDB2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDB2+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D6E528B72C288B8000F01AC8 /* PostDB2+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDB2+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +70,15 @@
 		D65F4B072C26DD32009360DD /* HTTPRequests */ = {
 			isa = PBXGroup;
 			children = (
+				D6E528B72C288B8000F01AC8 /* PostDB2+CoreDataProperties.swift */,
+				D6E528B62C288B8000F01AC8 /* PostDB2+CoreDataClass.swift */,
 				D638F17F2C2867A500CA1900 /* NetworkManager.swift */,
 				D65F4B082C26DD32009360DD /* AppDelegate.swift */,
 				D65F4B0A2C26DD32009360DD /* SceneDelegate.swift */,
 				D65F4B0C2C26DD32009360DD /* ViewController.swift */,
 				D638F17D2C28641400CA1900 /* DetailControllerView.swift */,
+				D64096672C28803800E0280A /* LikedViewController.swift */,
+				D64096692C2881EF00E0280A /* Model.xcdatamodeld */,
 				D65F4B0E2C26DD32009360DD /* Main.storyboard */,
 				D65F4B112C26DD33009360DD /* Assets.xcassets */,
 				D65F4B132C26DD33009360DD /* LaunchScreen.storyboard */,
@@ -147,10 +159,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64096682C28803800E0280A /* LikedViewController.swift in Sources */,
 				D638F1802C2867A500CA1900 /* NetworkManager.swift in Sources */,
 				D65F4B0D2C26DD32009360DD /* ViewController.swift in Sources */,
+				D640966B2C2881F000E0280A /* Model.xcdatamodeld in Sources */,
 				D65F4B092C26DD32009360DD /* AppDelegate.swift in Sources */,
 				D65F4B0B2C26DD32009360DD /* SceneDelegate.swift in Sources */,
+				D6E528B82C288B8000F01AC8 /* PostDB2+CoreDataClass.swift in Sources */,
+				D6E528B92C288B8000F01AC8 /* PostDB2+CoreDataProperties.swift in Sources */,
 				D638F17E2C28641400CA1900 /* DetailControllerView.swift in Sources */,
 				D65F4B1D2C26E094009360DD /* Post.swift in Sources */,
 			);
@@ -375,6 +391,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D64096692C2881EF00E0280A /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D640966A2C2881EF00E0280A /* Model.xcdatamodel */,
+			);
+			currentVersion = D640966A2C2881EF00E0280A /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = /Users/itwasjoke/Desktop/iOSCourse/HTTPRequests/HTTPRequests/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D65F4AFD2C26DD32009360DD /* Project object */;
 }
